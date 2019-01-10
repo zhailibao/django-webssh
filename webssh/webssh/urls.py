@@ -15,9 +15,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from django_webssh import views
+from django.conf.urls import url
+from django_webssh import views as webssh_views
+from django_podxterm import views as podxterm_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.index),
+    path('', webssh_views.index),
+    path('podxterm', podxterm_views.index),
+    url(r'podlogs/(?P<podid>\d+)$', podxterm_views.getpodlogs),
 ]

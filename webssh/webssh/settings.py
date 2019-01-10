@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django_webssh',
+    'django_podxterm',
     'channels',
 ]
 
@@ -118,6 +119,7 @@ USE_L10N = True
 
 USE_TZ = True
 
+K8S_CONFIG=os.path.join(BASE_DIR,'admin.conf')
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.0/howto/static-files/

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>webssh</title>
+    <link rel="icon" href="/static/favicon.ico"/>
+    <link rel="stylesheet" href="/static/xterm/xterm.css"/>
+    <link rel="stylesheet" href="/static/xterm/style.css"/>
+    <link rel="stylesheet" href="/static/bootstrap.min.css"/>
+    <style>
+        .input-width {
+            width: 20%;
+            display: inline-block;
+        }
+
+        .hide {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<form>
+<li>{% csrf_token
+    %}
+</li>
+<div id="content" class="terminal xterm">
+{{ logs }}
+</div>
+    </form>
+
+<script src="/static/jquery.min.js"></script>
+<script>
+setInterval( function () {
+  // $( "#content" ).load(location.href+ " #content>*" );
+    $.post(location.href,function (result) {
+        $("#content").text=result
+    })
+}, 5000);
+</script>
+</head>
+</body>
+</html>
