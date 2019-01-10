@@ -50,7 +50,6 @@ class WebSSHPOD(WebsocketConsumer):
 
         except Exception as e:
             print(e)
-            print('112222222')
             self.message['status'] = 1
             self.message['message'] = str(e)
             message = json.dumps(self.message)
@@ -69,7 +68,6 @@ class WebSSHPOD(WebsocketConsumer):
             status = data['status']
             if status == 0:
                 data = data['data']
-                #print('in receive data')
                 #print(data)
                 self.k8sapi.shell(data)
             else:

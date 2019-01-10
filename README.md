@@ -1,5 +1,12 @@
 ```
-开发环境: 
+
+fork 自：https://github.com/huyuan1999/django-webssh 感谢作者。
+作者blog：http://blog.51cto.com/hongchen99/2336087
+
+增加k8s 中 pod 的 webssh 登录部分,及使用kubernetes api 获取日志
+
+
+开发环境:
     deepin 15
     python 3.6
 
@@ -24,6 +31,18 @@
 <br><br><br><br>
 
 demo:<br><br>
+
+登录pod<br>
+![webssh](https://github.com/zhailibao/django-webssh/blob/master/demo/podlogin.png)
+<br><br><br>
+命令行操作界面<br>
+![webssh](https://github.com/zhailibao/django-webssh/blob/master/demo/podwebssh.png)
+<br><br><br>
+日志查看页面<br>
+
+![webssh](https://github.com/zhailibao/django-webssh/blob/master/demo/podlogs.png)
+<br><br><br>
+
 登录<br>
 ![webssh](https://github.com/huyuan1999/django-webssh/blob/master/demo/ssh.png)
 <br><br><br>

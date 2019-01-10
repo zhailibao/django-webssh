@@ -18,8 +18,6 @@ https://github.com/kubernetes-client/python/blob/master/examples/exec.py
 class K8SClient:
     def __int__(self):
         print('K8sclient init start')
-      #  self.socketer=socketer
-      #  self.message = message
     def new(self):
         config.load_kube_config(settings.K8S_CONFIG)
         c= Configuration()
@@ -33,14 +31,11 @@ class K8SClient:
         config.load_kube_config(settings.K8S_CONFIG)
         self.command=''
         self.socketer = socketer
-        c= Configuration()
-        c.assert_hostname = False
-        Configuration.set_default(c)
-        k8s = core_v1_api.CoreV1Api()
+        self.new()
         print('K8sclient init end')
         #command = ['/bin/bash']
-        print(podname)
-        print(namespace)
+        #print(podname)
+        #print(namespace)
         command = [
             "/bin/sh",
             "-c",
@@ -50,10 +45,9 @@ class K8SClient:
             '|| exec /bin/sh']
 
         container_stream = stream(
-            k8s.connect_get_namespaced_pod_exec,
+            self.k8s.connect_get_namespaced_pod_exec,
             name=podname,
             namespace=namespace,
-           # container=containername,
             command=command,
             stderr=True, stdin=True,
             stdout=True, tty=True,
