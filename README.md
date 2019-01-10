@@ -3,8 +3,22 @@
 fork 自：https://github.com/huyuan1999/django-webssh 感谢作者。
 作者blog：http://blog.51cto.com/hongchen99/2336087
 
+参考文档：
+https://blog.csdn.net/duxiangwushirenfei/article/details/83341574
+https://github.com/kubernetes-client/python/blob/master/examples/exec.py
+
+https://github.com/kubernetes-client/python/issues/476
+https://github.com/kubernetes-client/python/blob/abdc17f18f780eee83244e80b6d3acf2a884a10c/examples/exec.py
+
+
 增加k8s 中 pod 的 webssh 登录部分,及使用kubernetes api 获取日志
 
+todo：
+Copy Files to a pod ，download files from apod
+
+
+安装kubernetes python api：
+python3.6 -m pip install kubernetes
 
 开发环境:
     deepin 15
